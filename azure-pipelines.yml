@@ -20,12 +20,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- task: Docker@2
+- task: CmdLine@2
+  displayName: Curl Example
   inputs:
-    command: 'login'
-- task: Docker@2
-  inputs:
-    containerRegistry: 'dock2'
-    repository: 'cssdocairegistry.azurecr.io/devopsdemo'
-    command: 'buildAndPush'
-    Dockerfile: '**/AzureDockerfile'
+    script: 'curl google.com'
