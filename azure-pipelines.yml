@@ -27,4 +27,14 @@ steps:
       
       echo Hello world
       docker --version
+- task: Docker@2
+  inputs:
+    containerRegistry: 'SC-Registry'
+    command: 'login'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'SC-Registry'
+    repository: 'devopsdemo'
+    command: 'buildAndPush'
+    Dockerfile: '**/AzureDockerfile'
 
