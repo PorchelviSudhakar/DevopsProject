@@ -26,4 +26,5 @@ steps:
       echo Write your commands here
       
       echo Hello world
+      docker --version
 
